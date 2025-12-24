@@ -7,7 +7,7 @@ def main():
     # Kita memuat 'best.pt' dari paper sebagai otak dasar.
     # Pastikan file best.pt ada di folder 'weights'
     print("Memuat Model Pre-trained dari Paper...")
-    model = YOLO('weights/best.pt') 
+    model = YOLO('C:/Users/N I T R O  5/OneDrive/Documents/GitHub/Flying_Object/weight/refined_3class/best.pt')
 
     # ---------------------------------------------------------
     # 2. START TRAINING (Fine-Tuning)
@@ -17,10 +17,10 @@ def main():
     # untuk mensimulasikan kondisi sulit (rotasi, gelap, dll).
     
     results = model.train(
-        data='data.yaml',   # Config dataset
+        data='C:/Users/N I T R O  5/OneDrive/Documents/GitHub/Flying_Object/dataset/data.yaml',   # Config dataset
         epochs=50,          # 50 Epoch cukup untuk fine-tuning
         imgsz=640,          # Resolusi gambar
-        batch=16,           # Batch size (turunkan ke 8 jika GPU teman memori kecil)
+        batch=4,           # Batch size (turunkan ke 8 jika GPU teman memori kecil)
         project='runs/train',
         name='finetune_result',
         
